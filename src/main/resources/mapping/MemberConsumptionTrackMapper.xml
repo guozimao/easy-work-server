@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.maozi.easywork.mapper.MemberConsumptionTrackMapper">
+    <resultMap id="BaseResultMap" type="com.maozi.easywork.entity.MemberConsumptionTrack">
+        <result column="id" jdbcType="BIGINT" property="id" />
+        <result column="task_no" jdbcType="VARCHAR" property="taskNo" />
+        <result column="order_date" jdbcType="VARCHAR" property="orderDate" />
+        <result column="store_name" jdbcType="VARCHAR" property="storeName" />
+        <result column="member_name" jdbcType="VARCHAR" property="memberName" />
+        <result column="actual_fee" jdbcType="DECIMAL" property="actualFee" />
+        <result column="total" jdbcType="INTEGER" property="total" />
+        <result column="note" jdbcType="VARCHAR" property="note" />
+        <result column="should_fee" jdbcType="DECIMAL" property="shouldFee" />
+        <result column="commission" jdbcType="DECIMAL" property="commission" />
+        <result column="promoters" jdbcType="VARCHAR" property="promoters" />
+        <result column="registrant" jdbcType="VARCHAR" property="registrant" />
+    </resultMap>
+
+    <sql id="dataQuery">
+        id,order_date,store_name,member_name,promoters
+    </sql>
+
+    <select id="getMarkedMemberNameList" resultType="java.lang.String">
+        SELECT marked_member_name FROM marked_member_name_info
+    </select>
+
+    <select id="queryList" parameterType="java.util.HashMap" resultMap="BaseResultMap">
+        select
+        <include refid="dataQuery"/>
+        from member_consumption_track
+        <where>
+            <if test="memberName!=null and memberName!=''">
+                and member_name like concat('%',#{memberName},'%')
+            </if >
+            <if test="startDate!=null and startDate!=''">
+                and order_date &gt;=  #{startDate}
+            </if >
+            <if test="endDate!=null and endDate!=''">
+                and order_date &lt;=  #{endDate}
+            </if >
+            <if test="promoters!=null and promoters!=''">
+                and promoters like concat('%',#{promoters},'%')
+            </if >
+            <if test="storeName!=null and storeName!=''">
+                and store_name like concat('%',#{storeName},'%')
+            </if >
+        </where>
+        limit ${position},${offset}
+    </select>
+
+    <select id="total4QueryList" parameterType="java.util.HashMap" resultType="java.lang.Integer">
+        select count(0) from member_consumption_track
+        <where>
+            <if test="memberName!=null and memberName!=''">
+                and member_name like concat('%',#{memberName},'%')
+            </if >
+            <if test="startDate!=null and startDate!=''">
+                and order_date &gt;=  #{startDate}
+            </if >
+            <if test="endDate!=null and endDate!=''">
+                and order_date &lt;=  #{endDate}
+            </if >
+            <if test="promoters!=null and promoters!=''">
+                and promoters like concat('%',#{promoters},'%')
+            </if >
+            <if test="storeName!=null and storeName!=''">
+                and store_name like concat('%',#{storeName},'%')
+            </if >
+        </where>
+    </select>
+
+    <insert id="addMemberConsumptionTracks" parameterType="java.util.List">
+        insert into member_consumption_track (task_no, order_date, store_name, member_name,
+        actual_fee,total,note,should_fee,commission,promoters,registrant)
+        values
+        <foreach collection="list" item="ResourceList" index="index" separator=",">
+            (#{ResourceList.taskNo,jdbcType=VARCHAR},
+            #{ResourceList.orderDate,jdbcType=VARCHAR},
+            #{ResourceList.storeName,jdbcType=VARCHAR},
+            #{ResourceList.memberName,jdbcType=VARCHAR},
+            #{ResourceList.actualFee,jdbcType=DECIMAL},
+            #{ResourceList.total,jdbcType=INTEGER},
+            #{ResourceList.note,jdbcType=VARCHAR},
+            #{ResourceList.shouldFee,jdbcType=DECIMAL},
+            #{ResourceList.commission,jdbcType=DECIMAL},
+            #{ResourceList.promoters,jdbcType=VARCHAR},
+            #{ResourceList.registrant,jdbcType=VARCHAR}
+            )
+        </foreach>
+    </insert>
+
+    <delete id="deleteMarkedMember">
+    delete from marked_member_name_info
+    </delete>
+
+    <insert id="addMarkedMember" parameterType="java.util.List">
+        insert into marked_member_name_info (marked_member_name)
+        values
+        <foreach collection="list" item="name" index="index" separator=",">
+            (#{name,jdbcType=VARCHAR})
+        </foreach>
+    </insert>
+
+    <update id="updateMemberName" parameterType="com.maozi.easywork.entity.UpdateMemberName">
+        update member_consumption_track
+        <set>
+            member_name = #{newName}
+        </set>
+        where member_name = #{oldName}
+        <if test="orderDate != null and orderDate != ''">
+            and order_date = #{orderDate}
+        </if>
+    </update>
+</mapper>

@@ -1,0 +1,101 @@
+[2020-04-05 17:12:37.668 DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator:buildExpressionFactory(89)] - Loaded expression factory via original TCCL
+[2020-04-05 17:12:37.677 INFO  org.springframework.boot.StartupInfoLogger:logStarting(50)] - Starting EasyworkApplication on DESKTOP-HJTV42C with PID 2916 (D:\practice\ideaproject\easy-work\target\classes started by 45140 in D:\practice\ideaproject\easy-work)
+[2020-04-05 17:12:37.678 DEBUG org.springframework.boot.StartupInfoLogger:logStarting(53)] - Running with Spring Boot v2.1.13.RELEASE, Spring v5.1.14.RELEASE
+[2020-04-05 17:12:37.679 INFO  org.springframework.boot.SpringApplication:logStartupProfileInfo(648)] - No active profile set, falling back to default profiles: default
+[2020-04-05 17:12:37.680 DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl:logValidatorFactoryScopedConfiguration(578)] - HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+[2020-04-05 17:12:37.683 DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl:logValidatorFactoryScopedConfiguration(579)] - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+[2020-04-05 17:12:37.684 DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl:logValidatorFactoryScopedConfiguration(580)] - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+[2020-04-05 17:12:37.684 DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl:logValidatorFactoryScopedConfiguration(581)] - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+[2020-04-05 17:12:37.684 DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl:logValidatorFactoryScopedConfiguration(582)] - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+[2020-04-05 17:12:38.356 DEBUG org.apache.ibatis.logging.LogFactory:setImplementation(105)] - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+[2020-04-05 17:12:38.778 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer:initialize(90)] - Tomcat initialized with port(s): 8090 (http)
+[2020-04-05 17:12:38.794 INFO  org.apache.juli.logging.DirectJDKLog:log(173)] - Initializing ProtocolHandler ["http-nio-8090"]
+[2020-04-05 17:12:38.804 INFO  org.apache.juli.logging.DirectJDKLog:log(173)] - Starting service [Tomcat]
+[2020-04-05 17:12:38.805 INFO  org.apache.juli.logging.DirectJDKLog:log(173)] - Starting Servlet engine: [Apache Tomcat/9.0.31]
+[2020-04-05 17:12:39.065 INFO  org.apache.juli.logging.DirectJDKLog:log(173)] - Initializing Spring embedded WebApplicationContext
+[2020-04-05 17:12:39.066 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:prepareWebApplicationContext(284)] - Root WebApplicationContext: initialization completed in 1340 ms
+[2020-04-05 17:12:39.172 DEBUG com.zaxxer.hikari.HikariConfig:setDriverClassName(480)] - Driver class com.mysql.cj.jdbc.Driver found in Thread context class loader sun.misc.Launcher$AppClassLoader@58644d46
+[2020-04-05 17:12:39.372 DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers:getDefault(60)] - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+[2020-04-05 17:12:39.372 DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator:buildExpressionFactory(89)] - Loaded expression factory via original TCCL
+[2020-04-05 17:12:39.375 DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers:getDefault(60)] - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+[2020-04-05 17:12:39.376 DEBUG org.hibernate.validator.internal.engine.ConfigurationImpl:messageInterpolator(148)] - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+[2020-04-05 17:12:39.376 DEBUG org.hibernate.validator.internal.engine.ConfigurationImpl:constraintValidatorFactory(180)] - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+[2020-04-05 17:12:39.377 DEBUG org.hibernate.validator.internal.engine.ConfigurationImpl:parameterNameProvider(194)] - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+[2020-04-05 17:12:39.377 DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser:getValidationXmlInputStream(120)] - Trying to load META-INF/validation.xml for XML based Validator configuration.
+[2020-04-05 17:12:39.378 DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper:getResettableInputStreamForPath(53)] - Trying to load META-INF/validation.xml via user class loader
+[2020-04-05 17:12:39.378 DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper:getResettableInputStreamForPath(60)] - Trying to load META-INF/validation.xml via TCCL
+[2020-04-05 17:12:39.378 DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper:getResettableInputStreamForPath(66)] - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+[2020-04-05 17:12:39.378 DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser:getValidationXmlInputStream(127)] - No META-INF/validation.xml found. Using annotation based configuration only.
+[2020-04-05 17:12:39.383 DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl:logValidatorFactoryScopedConfiguration(578)] - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+[2020-04-05 17:12:39.383 DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl:logValidatorFactoryScopedConfiguration(579)] - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+[2020-04-05 17:12:39.383 DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl:logValidatorFactoryScopedConfiguration(580)] - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+[2020-04-05 17:12:39.383 DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl:logValidatorFactoryScopedConfiguration(581)] - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+[2020-04-05 17:12:39.383 DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryImpl:logValidatorFactoryScopedConfiguration(582)] - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+[2020-04-05 17:12:39.507 INFO  org.springframework.scheduling.concurrent.ExecutorConfigurationSupport:initialize(171)] - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-04-05 17:12:39.702 INFO  org.apache.juli.logging.DirectJDKLog:log(173)] - Starting ProtocolHandler ["http-nio-8090"]
+[2020-04-05 17:12:39.725 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer:start(202)] - Tomcat started on port(s): 8090 (http) with context path ''
+[2020-04-05 17:12:39.728 INFO  org.springframework.boot.StartupInfoLogger:logStarted(59)] - Started EasyworkApplication in 2.329 seconds (JVM running for 3.84)
+[2020-04-05 17:13:04.420 INFO  org.apache.juli.logging.DirectJDKLog:log(173)] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-04-05 17:13:04.420 INFO  org.springframework.web.servlet.FrameworkServlet:initServletBean(525)] - Initializing Servlet 'dispatcherServlet'
+[2020-04-05 17:13:04.427 INFO  org.springframework.web.servlet.FrameworkServlet:initServletBean(547)] - Completed initialization in 6 ms
+[2020-04-05 17:13:04.485 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1020)] - HikariPool-1 - configuration:
+[2020-04-05 17:13:04.487 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - allowPoolSuspension.............false
+[2020-04-05 17:13:04.488 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - autoCommit......................true
+[2020-04-05 17:13:04.488 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - catalog.........................none
+[2020-04-05 17:13:04.488 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - connectionInitSql...............none
+[2020-04-05 17:13:04.489 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - connectionTestQuery.............none
+[2020-04-05 17:13:04.489 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - connectionTimeout...............30000
+[2020-04-05 17:13:04.489 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - dataSource......................none
+[2020-04-05 17:13:04.490 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - dataSourceClassName.............none
+[2020-04-05 17:13:04.490 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - dataSourceJNDI..................none
+[2020-04-05 17:13:04.490 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - dataSourceProperties............{password=<masked>}
+[2020-04-05 17:13:04.491 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - driverClassName................."com.mysql.cj.jdbc.Driver"
+[2020-04-05 17:13:04.491 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - healthCheckProperties...........{}
+[2020-04-05 17:13:04.491 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - healthCheckRegistry.............none
+[2020-04-05 17:13:04.491 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - idleTimeout.....................600000
+[2020-04-05 17:13:04.492 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - initializationFailTimeout.......1
+[2020-04-05 17:13:04.492 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - isolateInternalQueries..........false
+[2020-04-05 17:13:04.492 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - jdbcUrl.........................jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+[2020-04-05 17:13:04.493 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - leakDetectionThreshold..........0
+[2020-04-05 17:13:04.493 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - maxLifetime.....................1800000
+[2020-04-05 17:13:04.493 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - maximumPoolSize.................10
+[2020-04-05 17:13:04.493 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - metricRegistry..................none
+[2020-04-05 17:13:04.494 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - metricsTrackerFactory...........none
+[2020-04-05 17:13:04.494 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - minimumIdle.....................10
+[2020-04-05 17:13:04.494 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - password........................<masked>
+[2020-04-05 17:13:04.495 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - poolName........................"HikariPool-1"
+[2020-04-05 17:13:04.495 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - readOnly........................false
+[2020-04-05 17:13:04.495 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - registerMbeans..................false
+[2020-04-05 17:13:04.495 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - scheduledExecutor...............none
+[2020-04-05 17:13:04.496 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - schema..........................none
+[2020-04-05 17:13:04.496 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - threadFactory...................internal
+[2020-04-05 17:13:04.496 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - transactionIsolation............default
+[2020-04-05 17:13:04.496 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - username........................"root"
+[2020-04-05 17:13:04.497 DEBUG com.zaxxer.hikari.HikariConfig:logConfiguration(1052)] - validationTimeout...............5000
+[2020-04-05 17:13:04.497 INFO  com.zaxxer.hikari.HikariDataSource:getConnection(110)] - HikariPool-1 - Starting...
+[2020-04-05 17:13:04.622 DEBUG com.zaxxer.hikari.pool.HikariPool:checkFailFast(545)] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@58da930
+[2020-04-05 17:13:04.624 INFO  com.zaxxer.hikari.HikariDataSource:getConnection(123)] - HikariPool-1 - Start completed.
+[2020-04-05 17:13:04.634 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger:debug(143)] - ==>  Preparing: SELECT marked_member_name FROM marked_member_name_info 
+[2020-04-05 17:13:04.656 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger:debug(143)] - ==> Parameters: 
+[2020-04-05 17:13:04.677 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger:debug(143)] - <==      Total: 1
+[2020-04-05 17:13:04.726 DEBUG com.zaxxer.hikari.pool.HikariPool:logPoolState(411)] - HikariPool-1 - Pool stats (total=1, active=0, idle=1, waiting=0)
+[2020-04-05 17:13:04.730 DEBUG com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator:call(709)] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@486b1352
+[2020-04-05 17:13:04.733 DEBUG com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator:call(709)] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3cae0fce
+[2020-04-05 17:13:04.736 DEBUG com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator:call(709)] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2c9ba54f
+[2020-04-05 17:13:04.739 DEBUG com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator:call(709)] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6908629b
+[2020-04-05 17:13:04.742 DEBUG com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator:call(709)] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2edf04b1
+[2020-04-05 17:13:04.745 DEBUG com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator:call(709)] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7cf55859
+[2020-04-05 17:13:04.748 DEBUG com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator:call(709)] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@b879e13
+[2020-04-05 17:13:04.751 DEBUG com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator:call(709)] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2bc5e1a7
+[2020-04-05 17:13:04.754 DEBUG com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator:call(709)] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3671abf7
+[2020-04-05 17:13:04.754 DEBUG com.zaxxer.hikari.pool.HikariPool:logPoolState(411)] - HikariPool-1 - After adding stats (total=10, active=0, idle=10, waiting=0)
+[2020-04-05 17:13:19.499 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger:debug(143)] - ==>  Preparing: delete from marked_member_name_info 
+[2020-04-05 17:13:19.499 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger:debug(143)] - ==> Parameters: 
+[2020-04-05 17:13:19.668 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger:debug(143)] - <==    Updates: 1
+[2020-04-05 17:13:19.710 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger:debug(143)] - ==>  Preparing: insert into marked_member_name_info (marked_member_name) values (?) 
+[2020-04-05 17:13:19.712 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger:debug(143)] - ==> Parameters: 姨母笑(String)
+[2020-04-05 17:13:19.792 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger:debug(143)] - <==    Updates: 1
+[2020-04-05 17:13:34.728 DEBUG com.zaxxer.hikari.pool.HikariPool:logPoolState(411)] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2020-04-05 17:14:04.730 DEBUG com.zaxxer.hikari.pool.HikariPool:logPoolState(411)] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2020-04-05 17:14:34.732 DEBUG com.zaxxer.hikari.pool.HikariPool:logPoolState(411)] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[2020-04-05 17:15:04.734 DEBUG com.zaxxer.hikari.pool.HikariPool:logPoolState(411)] - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)

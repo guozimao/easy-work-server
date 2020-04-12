@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.maozi.easywork.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.maozi.easywork.entity.User">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="user_name" jdbcType="VARCHAR" property="userName" />
+        <result column="pass_word" jdbcType="VARCHAR" property="passWord" />
+        <result column="real_name" jdbcType="VARCHAR" property="realName" />
+    </resultMap>
+
+    <select id="findOne" resultMap="BaseResultMap">
+        select * from user where id = #{id}
+    </select>
+
+    <select id="findOneByUserName" resultMap="BaseResultMap">
+        select * from user where user_name = #{userName}
+    </select>
+
+    <select id="findAll" resultType="hashmap">
+    select * from user
+    </select>
+
+    <select id="getPermission" resultType="hashmap">
+    select permission from user u
+    inner join user_permission up on up.user_id = u.id
+    WHERE
+     u.id = #{user_id}
+    </select>
+</mapper>
