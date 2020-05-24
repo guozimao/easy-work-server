@@ -15,6 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Stream;
 
 import static org.apache.poi.ss.usermodel.CellType.*;
 
@@ -134,8 +135,8 @@ public static List<String[]> readExcel(MultipartFile file) throws IOException{
                          //获得当前行的开始列
                          int firstCellNum = row.getFirstCellNum();
                          //获得当前行的列数
-                         int lastCellNum = row.getPhysicalNumberOfCells();
-                         String[] cells = new String[row.getPhysicalNumberOfCells()];
+                         int lastCellNum = row.getLastCellNum();
+                         String[] cells = new String[lastCellNum];
                          //循环当前行
                          for(int cellNum = firstCellNum; cellNum < lastCellNum;cellNum++){
                                  Cell cell = row.getCell(cellNum);
