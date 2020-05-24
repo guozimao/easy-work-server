@@ -45,6 +45,7 @@
                 and store_name like concat('%',#{storeName},'%')
             </if >
         </where>
+        order by order_date desc
         limit ${position},${offset}
     </select>
 

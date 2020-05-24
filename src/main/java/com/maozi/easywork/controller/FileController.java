@@ -30,7 +30,7 @@ public class FileController {
            List<String[]> data = POIUtils.readExcel(multipartfiles[0]);
            List<MemberConsumptionTrack> list = new ArrayList<>();
            for (int i = 1; i < data.size(); i++){
-               if(!data.get(i)[0].equals("")){
+               if(data.get(i).length > 3 && !data.get(i)[3].equals("")){
                    MemberConsumptionTrack mCT = new MemberConsumptionTrack();
                    mCT.setTaskNo(StringUtils.isEmpty(data.get(i)[0]) ? "" : data.get(i)[0]);
                    mCT.setOrderDate(StringUtils.isEmpty(data.get(i)[1]) ? "" : data.get(i)[1]);
@@ -42,7 +42,7 @@ public class FileController {
                    mCT.setShouldFee(new BigDecimal(StringUtils.isEmpty(data.get(i)[8]) ? "0" : data.get(i)[8]));
                    mCT.setCommission(new BigDecimal((StringUtils.isEmpty(data.get(i)[9]) || data.get(i)[9].equals("/")) ? "0" : data.get(i)[9]));
                    mCT.setPromoters(StringUtils.isEmpty(data.get(i)[10]) ? "" : data.get(i)[10]);
-                   if(data.get(i).length >= 12) {
+                   if(data.get(i).length > 11) {
                        mCT.setRegistrant(StringUtils.isEmpty(data.get(i)[11]) ? "" : data.get(i)[11]);
                    }
                    list.add(mCT);
