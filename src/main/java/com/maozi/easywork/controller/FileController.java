@@ -30,7 +30,7 @@ public class FileController {
            List<String[]> data = POIUtils.readExcel(multipartfiles[0]);
            List<MemberConsumptionTrack> list = new ArrayList<>();
            for (int i = 1; i < data.size(); i++){
-               if(data.get(i).length > 3 && !data.get(i)[3].equals("")){
+               if(data.get(i).length > 3 && !StringUtils.isEmpty(data.get(i)[3])){
                    MemberConsumptionTrack mCT = new MemberConsumptionTrack();
                    mCT.setTaskNo(StringUtils.isEmpty(data.get(i)[0]) ? "" : data.get(i)[0]);
                    mCT.setOrderDate(StringUtils.isEmpty(data.get(i)[1]) ? "" : data.get(i)[1]);
