@@ -10,11 +10,11 @@ import java.util.Map;
 @Repository
 public interface MemberConsumptionTrackMapper {
 
-    List<MemberConsumptionTrack> queryList(Map filterMap);
+    List<MemberConsumptionTrack> queryListWithRoot(Map filterMap);
 
     int addMemberConsumptionTracks(List<MemberConsumptionTrack> memberConsumptionTrackList);
 
-    int total4QueryList(Map<String, Object> filterMap);
+    int total4QueryListWithRoot(Map<String, Object> filterMap);
 
     List<String> getMarkedMemberNameList();
     
@@ -23,4 +23,10 @@ public interface MemberConsumptionTrackMapper {
     int addMarkedMember(List<String> memberName);
 
     void updateMemberName(UpdateMemberName updateMemberName);
+
+    List<String> getRoleByUserId(String userId);
+
+    List<MemberConsumptionTrack> queryList(Map<String, Object> filterMap);
+
+    int total4QueryList(Map<String, Object> filterMap);
 }

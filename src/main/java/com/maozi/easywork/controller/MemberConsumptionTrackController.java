@@ -21,8 +21,8 @@ public class MemberConsumptionTrackController {
     @UserLoginToken
     @PostMapping("/list")
     @ResponseBody
-    public Object queryList(@RequestBody MemberConsumptionTrackQuery mCTQ) {
-        Map map = memberConsumptionTrackService.queryList(mCTQ);
+    public Object queryList(@RequestBody MemberConsumptionTrackQuery mCTQ,@RequestHeader(name = "token") String token) {
+        Map map = memberConsumptionTrackService.queryList(mCTQ,token);
         return new ResposeEntity(map);
     }
 

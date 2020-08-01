@@ -24,7 +24,12 @@
         SELECT marked_member_name FROM marked_member_name_info
     </select>
 
-    <select id="queryList" parameterType="java.util.HashMap" resultMap="BaseResultMap">
+    <select id="getRoleByUserId" resultType="java.lang.String">
+        select role from user_role
+        where user_id = #{id}
+    </select>
+
+    <select id="queryListWithRoot" parameterType="java.util.HashMap" resultMap="BaseResultMap">
         select
         <include refid="dataQuery"/>
         from member_consumption_track
@@ -49,7 +54,7 @@
         limit ${position},${offset}
     </select>
 
-    <select id="total4QueryList" parameterType="java.util.HashMap" resultType="java.lang.Integer">
+    <select id="total4QueryListWithRoot" parameterType="java.util.HashMap" resultType="java.lang.Integer">
         select count(0) from member_consumption_track
         <where>
             <if test="memberName!=null and memberName!=''">
@@ -68,6 +73,74 @@
                 and store_name like concat('%',#{storeName},'%')
             </if >
         </where>
+    </select>
+
+    <select id="queryList" parameterType="java.util.HashMap" resultMap="BaseResultMap">
+        select
+        <include refid="dataQuery"/>
+        from member_consumption_track
+        <where>
+            <if test="memberName!=null and memberName!=''">
+                and member_name = #{memberName}
+            </if >
+            <if test="((memberName!=null and memberName!='') or (promoters!=null and promoters!='') or (storeName!=null and storeName!='')) and startDate!=null and startDate!=''">
+                and order_date &gt;=  #{startDate}
+            </if >
+            <if test="((memberName!=null and memberName!='') or (promoters!=null and promoters!='') or (storeName!=null and storeName!='')) and endDate!=null and endDate!=''">
+                and order_date &lt;=  #{endDate}
+            </if >
+            <if test="promoters!=null and promoters!=''">
+                and promoters = #{promoters}
+            </if >
+            <if test="storeName!=null and storeName!=''">
+                and store_name = #{storeName}
+            </if >
+        </where>
+        order by order_date desc
+        <choose>
+            <when test="((memberName!=null and memberName!='') or (promoters!=null and promoters!='') or (storeName!=null and storeName!=''))">
+                limit ${position},${offset}
+            </when>
+            <otherwise>
+                limit 0
+            </otherwise>
+        </choose>
+    </select>
+
+    <select id="total4QueryList" parameterType="java.util.HashMap" resultType="java.lang.Integer">
+
+        <choose>
+            <when test="((memberName!=null and memberName!='') or (promoters!=null and promoters!='') or (storeName!=null and storeName!=''))">
+                select count(0) from member_consumption_track
+            </when>
+            <otherwise>
+                select 0 from member_consumption_track
+            </otherwise>
+        </choose>
+        <where>
+            <if test="memberName!=null and memberName!=''">
+                and member_name = #{memberName}
+            </if >
+            <if test="((memberName!=null and memberName!='') or (promoters!=null and promoters!='') or (storeName!=null and storeName!='')) and startDate!=null and startDate!=''">
+                and order_date &gt;=  #{startDate}
+            </if >
+            <if test="((memberName!=null and memberName!='') or (promoters!=null and promoters!='') or (storeName!=null and storeName!='')) and endDate!=null and endDate!=''">
+                and order_date &lt;=  #{endDate}
+            </if >
+            <if test="promoters!=null and promoters!=''">
+                and promoters = #{promoters}
+            </if >
+            <if test="storeName!=null and storeName!=''">
+                and store_name = #{storeName}
+            </if >
+        </where>
+        <choose>
+            <when test="((memberName!=null and memberName!='') or (promoters!=null and promoters!='') or (storeName!=null and storeName!=''))">
+            </when>
+            <otherwise>
+                limit 1
+            </otherwise>
+        </choose>
     </select>
 
     <insert id="addMemberConsumptionTracks" parameterType="java.util.List">

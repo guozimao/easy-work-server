@@ -25,7 +25,10 @@ public class MemberConsumptionTrackService {
     @Autowired
     MemberConsumptionTrackMapper memberConsumptionTrackMapper;
 
-    public Map queryList(MemberConsumptionTrackQuery queryFrom){
+    @Autowired
+    TokenService tokenService;
+
+    public Map queryList(MemberConsumptionTrackQuery queryFrom, String token){
         Map<String, Object> filterMap = new HashMap<>();
         filterMap.put("memberName", queryFrom.getMemberName());
         filterMap.put("storeName", queryFrom.getStoreName());
@@ -35,10 +38,19 @@ public class MemberConsumptionTrackService {
         filterMap.put("position", queryFrom.getPageNum() * queryFrom.getPageSize() - queryFrom.getPageSize());
         filterMap.put("offset", queryFrom.getPageSize());
 
+        Boolean isRoot = isRoot4user(token);
+
         Map<String,Object> resultMap = new HashMap();
-        List<MemberConsumptionTrack> dSList = memberConsumptionTrackMapper.queryList(filterMap);
+        List<MemberConsumptionTrack> dSList = null;
+
         List<String> markNameList = getMarkedMember();
         List<Object> result = new ArrayList<>();
+
+        if(isRoot){
+            dSList = memberConsumptionTrackMapper.queryListWithRoot(filterMap);
+        }else{
+            dSList = memberConsumptionTrackMapper.queryList(filterMap);
+        }
 
         try {
             for(MemberConsumptionTrack mCT : dSList){
@@ -60,8 +72,21 @@ public class MemberConsumptionTrackService {
         resultMap.put("list", result);
         resultMap.put("pageNum", queryFrom.getPageNum());
         resultMap.put("pageSize", queryFrom.getPageSize());
-        resultMap.put("total", memberConsumptionTrackMapper.total4QueryList(filterMap));
+        if(isRoot){
+            resultMap.put("total", memberConsumptionTrackMapper.total4QueryListWithRoot(filterMap));
+        }else{
+            resultMap.put("total", memberConsumptionTrackMapper.total4QueryList(filterMap));
+        }
+
        return  resultMap;
+    }
+
+    private Boolean isRoot4user(String token) {
+        List<String> roles = memberConsumptionTrackMapper.getRoleByUserId(tokenService.getUserId(token));
+        if(roles == null){
+            return false;
+        }
+        return roles.indexOf("admin") > -1;
     }
 
     public String addMemberConsumptionTracks(List<MemberConsumptionTrack> list){
